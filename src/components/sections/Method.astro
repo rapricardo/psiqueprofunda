@@ -1,0 +1,32 @@
+---
+const pilares = [
+  { title: 'Consciência', desc: 'Reconhecer padrões emocionais que operam no automático.' },
+  { title: 'Desconstrução', desc: 'Questionar crenças limitantes que guiam suas decisões.' },
+  { title: 'Integração', desc: 'Unir razão e emoção sem anular nenhuma das duas.' },
+  { title: 'Autoria', desc: 'Decidir com maturidade emocional e presença.' },
+];
+---
+
+<section class="section-spacing bg-bg-secondary">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 data-aos="fade-up" class="text-4xl md:text-5xl mb-4">Estrutura — Método em 4 pilares.</h2>
+      <p data-aos="fade-up" data-aos-delay="100" class="text-text-muted text-lg">Não é imersão emocional desorganizada. É processo consciente.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {pilares.map((pilar, i) => (
+        <div
+          data-aos="fade-up"
+          data-aos-delay={i * 100}
+          class="bg-white p-8 md:p-10 rounded-xl relative overflow-hidden group hover:bg-accent/[0.03] transition-colors"
+        >
+          <span class="absolute -top-2 -right-2 text-8xl font-serif text-accent/[0.07] group-hover:text-accent/15 transition-colors select-none">
+            0{i + 1}
+          </span>
+          <h3 class="text-xl font-bold mb-3 relative z-10">{pilar.title}</h3>
+          <p class="text-text-body leading-relaxed relative z-10">{pilar.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "DM Sans", sans-serif;
+
+  --color-bg-primary: #FAF8F5;
+  --color-bg-secondary: #F0EBE3;
+  --color-bg-video: #2D3B2A;
+  --color-accent: #7A8B6F;
+  --color-accent-hover: #6B7A60;
+  --color-detail: #8B7355;
+  --color-text-primary: #1A1A1A;
+  --color-text-body: #4A4A4A;
+  --color-text-muted: #8A8A8A;
+}
+
+@layer base {
+  body {
+    @apply bg-bg-primary text-text-body font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-text-primary;
+  }
+}
+
+.section-spacing {
+  @apply py-20 md:py-[120px];
+}
+
+.max-text-width {
+  @apply max-w-[720px] mx-auto;
+}
+
+.btn-primary {
+  @apply bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-full transition-all duration-300 inline-flex items-center gap-3 font-sans font-bold;
+}
+
+.serif-italic {
+  @apply font-serif italic;
+}
+
+.label-uppercase {
+  @apply text-accent text-xs uppercase tracking-[0.2em] font-bold mb-4 block;
+}

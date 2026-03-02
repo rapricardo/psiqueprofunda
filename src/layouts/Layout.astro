@@ -1,0 +1,59 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Despertar — O Retorno Consciente | Andreia Davlia',
+  description = 'Programa de desenvolvimento emocional para mulheres que buscam clareza, presença e autoria sobre suas próprias vidas. Por Andreia Davlia — Psique Profunda.',
+} = Astro.props;
+
+const ogImage = '/og-image.jpg';
+const siteUrl = 'https://psiqueprofunda.com.br';
+
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={siteUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+    <meta property="og:locale" content="pt_BR" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  </head>
+  <body class="min-h-screen selection:bg-accent/20 selection:text-accent">
+    <slot />
+
+    <script>
+      import AOS from 'aos';
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true,
+      });
+    </script>
+  </body>
+</html>

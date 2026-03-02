@@ -1,0 +1,38 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '@/assets/images/deia-abraco-01.png';
+
+const hotmartUrl = 'https://pay.hotmart.com/B95434104W?off=f5gi2zyq';
+---
+
+<section class="section-spacing bg-bg-primary overflow-hidden">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <div data-aos="fade-up">
+        <span class="label-uppercase">Psique Profunda · O Retorno para Si</span>
+        <h1 class="text-5xl md:text-7xl leading-tight mb-8">
+          Você não está perdida.<br />
+          <span class="serif-italic">Está desconectada de si.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-text-body mb-10 max-w-[540px] leading-relaxed">
+          Se você construiu estabilidade externa, mas sente ausência de vitalidade interna, talvez não precise de mais metas. Precise de clareza.
+        </p>
+        <a href={hotmartUrl} target="_blank" rel="noopener noreferrer" class="btn-primary group">
+          Quero recuperar minha clareza
+          <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
+        </a>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" class="relative aspect-[4/5] lg:aspect-square">
+        <Image
+          src={heroImage}
+          alt="Andreia Davlia — Psique Profunda"
+          widths={[400, 600, 800]}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          class="w-full h-full object-cover rounded-2xl"
+          loading="eager"
+        />
+        <div class="absolute inset-0 bg-accent/5 mix-blend-multiply rounded-2xl"></div>
+      </div>
+    </div>
+  </div>
+</section>

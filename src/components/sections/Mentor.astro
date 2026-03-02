@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import mentorImage from '@/assets/images/deia-maos-02.png';
+---
+
+<section class="section-spacing bg-bg-secondary">
+  <div class="container mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+      <div data-aos="fade-up" class="order-2 lg:order-1">
+        <span class="label-uppercase">Sobre a Mentora</span>
+        <h2 class="text-4xl md:text-5xl mb-8">Andreia Davlia</h2>
+        <div class="space-y-6 text-lg text-text-body leading-relaxed">
+          <p class="font-bold text-text-primary">Psicóloga clínica, especialista em processos emocionais e desenvolvimento humano.</p>
+          <p>Há mais de 15 anos acompanha mulheres em processos de reconexão emocional. Desenvolveu o método Despertar a partir da prática clínica e experiência estruturada.</p>
+          <p class="serif-italic text-detail text-xl pt-4">Sem promessas mágicas. Sem atalhos.</p>
+        </div>
+      </div>
+      <div data-aos="fade-up" data-aos-delay="200" class="order-1 lg:order-2">
+        <Image
+          src={mentorImage}
+          alt="Andreia Davlia"
+          widths={[400, 600, 800]}
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          class="w-full h-full object-cover rounded-sm"
+        />
+      </div>
+    </div>
+  </div>
+</section>
